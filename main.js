@@ -1,5 +1,5 @@
 //variables
-const { Client, Intents } = require("discord.js");
+const { Client, Intents, Collection } = require("discord.js");
 const bot = new Client({
   intents: [
     Intents.FLAGS.GUILDS,
@@ -12,7 +12,7 @@ const prefix = '+';
 const fs = require('fs');
 
 
-bot.commands = new Discord.Collection();
+bot.commands = new Collection();
 
 //file reader
 let [categoryCount, totalCommandCount] = [0, 0];
