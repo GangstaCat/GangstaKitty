@@ -7,6 +7,12 @@ const prefix = '+';
 
 const fs = require('fs');
 
+const { Client, Intents, Collection, Permissions } = require("discord.js");
+
+const client = new Client({
+  intents: [Intents.FLAGS.GUILDS]
+});
+
 bot.commands = new Discord.Collection();
 
 //file reader
