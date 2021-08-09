@@ -1,3 +1,5 @@
+console.log(process.version)
+
 //variables
 const { Client, Intents, Collection } = require("discord.js");
 const bot = new Client({

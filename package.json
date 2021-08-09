@@ -9,7 +9,7 @@
   "author": "GangstaCat",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^13.0.1",
+    "discord.js": "^13.0.0",
     "ms": "^2.1.3"
   }
 }
