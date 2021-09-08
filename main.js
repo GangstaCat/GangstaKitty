@@ -45,7 +45,7 @@ bot.on("messageCreate", async message => {
     try {
       await command.run(bot, message, args);
     } catch (e) {
-      message.channel.send({ content: "an error occured while trying to execute that command <a:confuzzled:860924268370722846>" })
+      message.channel.send({ content: "an error occured while executing that command <a:confuzzled:860924268370722846>" })
       console.error(`${message.guild.name} - #${message.channel.name} - ${message.channel.id}-${message.id}\n"${message.content}"\n`, e.stack);
     }
   }
