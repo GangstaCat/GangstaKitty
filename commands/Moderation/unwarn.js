@@ -5,21 +5,21 @@ module.exports.run = async (bot, message, args) => {
       let memberTarget = message.guild.members.cache.get(target.id);
 
       if (!memberTarget.roles.cache.has('856832352512245772')) {
-        message.reply("That member is not warned");
+        message.reply({ content: "That member is not warned" });
       }
       else if (memberTarget.roles.cache.has('856832352512245772') && !memberTarget.roles.cache.has('856832352339886107')) {
-        message.channel.send(`<@${message.author.id}> unwarned <@${memberTarget.user.id}> (\`${memberTarget.user.id}\`)`);
+        message.channel.send({ content: `<@${message.author.id}> unwarned <@${memberTarget.user.id}> (\`${memberTarget.user.id}\`)` });
         memberTarget.roles.remove('856832352512245772');
       }
       else if (memberTarget.roles.cache.has('856832352512245772') && memberTarget.roles.cache.has('856832352339886107')) {
-        message.channel.send(`<@${message.author.id}> unwarned <@${memberTarget.user.id}> (\`${memberTarget.user.id}\`)`);
+        message.channel.send({ content: `<@${message.author.id}> unwarned <@${memberTarget.user.id}> (\`${memberTarget.user.id}\`)` });
         memberTarget.roles.remove("856832352339886107");
       }
     } else {
-      message.reply("That member does not exist");
+      message.reply({ content: "That member does not exist" });
     }
   } else {
-    message.reply("You do not have the correct permissions to use this command");
+    message.reply({ content: "You do not have the correct permissions to use this command" });
   }
 }
 

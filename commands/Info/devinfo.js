@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) => {
     .addField('Twitter', "Follow GangstaCat on Twitter: https://twitter.com/gangstacatgd")
     .setFooter(`${message.author.tag}`, message.author.displayAvatarURL({ dynamic: true }));
 
-  message.channel.send(creatorEmbed);
+  message.channel.send({ embeds: [creatorEmbed] });
 }
 
 module.exports.data = {

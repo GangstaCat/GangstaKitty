@@ -14,14 +14,14 @@ module.exports.run = async (bot, message, args) => {
         .addField("Why?", banReason)
         .addField("Who?", `You were banned by ${message.author}`);
       const memberTarget = message.guild.members.cache.get(member.id);
-      memberTarget.send(banEmbed);
+      memberTarget.send({ embeds: [banEmbed] });
       memberTarget.ban({ reason: banReason });
-      message.channel.send(`${message.author} banned <@${memberTarget.id}> (\`${memberTarget.id}\`) for: ${banReason}`);
+      message.channel.send({ content: `${message.author} banned <@${memberTarget.id}> (\`${memberTarget.id}\`) for: ${banReason}` });
     } else {
-      message.channel.send("Please mention a member to ban them");
+      message.channel.send({ content: "Please mention a member to ban them" });
     }
   } else {
-    message.channel.send("You do not have permission to use this command")
+    message.channel.send({ content: "You do not have permission to use this command" })
   }
 }
 

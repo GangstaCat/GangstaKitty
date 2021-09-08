@@ -9,23 +9,22 @@ module.exports.run = async (bot, message, args) => {
 
         if (!args[1]) {
 
-            message.channel.send(`<@${memberTarget.user.id}> can no longer talk lol`)
+            message.channel.send({ content: `<@${memberTarget.user.id}> can no longer talk lol` })
 
             return
         }
 
 
-        message.channel.send(`<@${memberTarget.user.id}> can no longer talk for ${ms(ms(args[1]))} lol`)
+        message.channel.send({ content: `<@${memberTarget.user.id}> can no longer talk for ${ms(ms(args[1]))} lol` })
 
 
         setTimeout(function () {
 
 
-            message.channel.send(`:white_check_mark: <@${memberTarget.user.id}> has been unmuted and can talk again!`)
 
         }, ms(args[1]));
     } else {
-        message.reply(":x: That user does not exist");
+        message.reply({ content: "That user does not exist" });
     }
 }
 

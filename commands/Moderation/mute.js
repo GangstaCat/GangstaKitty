@@ -19,8 +19,8 @@ module.exports.run = async (bot, message, args) => {
           .addField("Who?", message.author);
         memberTarget.roles.remove(mainRole.id);
         memberTarget.roles.add(mutedRole.id);
-        message.channel.send(`${message.author} muted <@${memberTarget.id}> (\`${memberTarget.id}\`) for: ${muteReason}`)
-        memberTarget.send(muteEmbed);
+        message.channel.send({ content: `${message.author} muted <@${memberTarget.id}> (\`${memberTarget.id}\`) for: ${muteReason}` })
+        memberTarget.send({ embeds: [muteEmbed] });
         return
       }
 
@@ -33,18 +33,18 @@ module.exports.run = async (bot, message, args) => {
         .addField("Who?", message.author)
       memberTarget.roles.remove(mainRole.id);
       memberTarget.roles.add(mutedRole.id);
-      message.channel.send(`${message.author} mute <@${memberTarget.id}> for ${ms(ms(args[1]))}: ${muteReason}`);
-      memberTarget.send(`You have been muted in ${message.guild.name} for ${ms(ms(args[1]))}. Please wait until you will be unmuted.`);
+      message.channel.send({ content: `${message.author} mute <@${memberTarget.id}> for ${ms(ms(args[1]))}: ${muteReason}` });
+      memberTarget.send({ content: `You have been muted in ${message.guild.name} for ${ms(ms(args[1]))}. Please wait until you will be unmuted.` });
 
       setTimeout(function () {
         memberTarget.roles.remove(mutedRole.id);
         memberTarget.roles.add(mainRole.id);
       }, ms(args[1]));
     } else {
-      message.reply("That user does not exist");
+      message.reply({ content: "That user does not exist" });
     }
   } else {
-    message.reply("You do not have the correct permissions to use this command");
+    message.reply({ content: "You do not have the correct permissions to use this command" });
   }
 }
 

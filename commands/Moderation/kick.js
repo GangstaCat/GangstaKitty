@@ -14,14 +14,14 @@ module.exports.run = async (bot, message, args) => {
         .addField("Why?", kickReason)
         .addField("Who?", `You were kicked by ${message.author}`);
       const memberTarget = message.guild.members.cache.get(member.id);
-      memberTarget.send(kickEmbed);
+      memberTarget.send({ embeds: [kickEmbed] });
       memberTarget.kick({ reason: kickReason });
-      message.channel.send(message.channel.send(`${message.author} kicked <@${memberTarget.id}> (\`${memberTarget.id}\`) for: ${kickReason}`));
+      message.channel.send(message.channel.send({ content: `${message.author} kicked <@${memberTarget.id}> (\`${memberTarget.id}\`) for: ${kickReason}` }));
     } else {
-      message.channel.send("Please mention a member to kick them");
+      message.channel.send({ content: "Please mention a member to kick them" });
     }
   } else {
-    message.channel.send("You do not have permission to use this command")
+    message.channel.send({ content: "You do not have permission to use this command" })
   }
 }
 

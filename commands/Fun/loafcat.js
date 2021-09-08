@@ -4,13 +4,13 @@ module.exports.run = async (bot, message, args) => {
     "https://cdn.discordapp.com/attachments/856832353409302539/862976084157267979/GangstaCat.png",
     "https://cdn.discordapp.com/attachments/856832353409302539/862976083561283584/furry_loaf.png"];
 
-  if (!args[0]) return message.channel.send("Please specify what kind of loaf you want. \n1: Original loaf \n2: Poorly drawn loaf \n3: Gangsta loaf \n4: Furry loaf");
-  if (isNaN(args[0])) return message.reply("Please enter a valid number");
+  if (!args[0]) return message.channel.send({ content: "Please specify what kind of loaf you want. \n1: Original loaf \n2: Poorly drawn loaf \n3: Gangsta loaf \n4: Furry loaf" });
+  if (isNaN(args[0])) return message.reply({ content: "Please enter a valid number" });
 
-  if (args[0] > 4) return message.reply("There are only four loaf cats. Please enter a number 1 to 4");
-  if (args[0] < 1) return message.reply("There isn't a neutral or negative amount of loaf cats. Please enter a number 1 to 4");
+  if (args[0] > 4) return message.reply({ content: "There are only four loaf cats. Please enter a number 1 to 4" });
+  if (args[0] < 1) return message.reply({ content: "There isn't a neutral or negative amount of loaf cats. Please enter a number 1 to 4" });
 
-  await message.channel.send(loafCats[args[0] - 1]);
+  await message.channel.send({ content: loafCats[args[0] - 1] });
 
 
 }

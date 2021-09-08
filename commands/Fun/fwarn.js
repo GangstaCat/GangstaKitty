@@ -5,20 +5,20 @@ module.exports.run = async (bot, message, args) => {
 
     if (!memberTarget.roles.cache.has('856832352512245772')) {
 
-      message.channel.send(`<@${memberTarget.user.id}> has been warned. this is their first warn.`)
+      message.channel.send({ content: `<@${memberTarget.user.id}> has been warned. this is their first warn.` })
 
     }
     else if (memberTarget.roles.cache.has('856832352512245772') && !memberTarget.roles.cache.has('856832352339886107')) {
 
-      message.channel.send(`<@${memberTarget.user.id}> has been warned. this is their second warn.`)
+      message.channel.send({ content: `<@${memberTarget.user.id}> has been warned. this is their second warn.` })
 
     }
     else if (memberTarget.roles.cache.has('856832352512245772') && memberTarget.roles.cache.has('856832352339886107')) {
-      message.channel.send("this user has reached the maximum amount of warns. They will now be kicked.")
+      message.channel.send({ content: "this user has reached the maximum amount of warns. They will now be kicked." })
 
     }
   } else {
-    message.reply(":x: That member does not exist");
+    message.reply({ content: "That member does not exist" });
   }
 
 }

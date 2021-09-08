@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) => {
       .setThumbnail(message.author.displayAvatarURL({ dynamic: true }))
       .setDescription(`**User ID:** ${message.author.id} \n<@${message.author.id}> \n**Color:** ${message.member.displayHexColor} \n**Joined:** ${message.member.joinedAt} \n**Registered:** ${message.author.createdAt} \n**Roles - ${memberRoles.length}** \n ${memberRoles}`)
       .setFooter(`${message.author.tag}`, message.author.displayAvatarURL({ dynamic: true }));
-    message.channel.send(authorEmbed);
+    message.channel.send({ embeds: [authorEmbed] });
   }
   else {
     const memberRoles = member.roles.cache
@@ -25,7 +25,7 @@ module.exports.run = async (bot, message, args) => {
       .setThumbnail(member.user.displayAvatarURL({ dynamic: true }))
       .setDescription(`User ID: ${member.id} \n<@${member.user.id}> \nColor: ${member.displayHexColor} \n**Status:** ${member.presence.status} \n**Joined:** ${member.joinedAt} \n**Registered:** ${member.user.createdAt} \n**Roles - ${memberRoles.length}** \n ${memberRoles}`)
       .setFooter(`${message.author.tag}`, message.author.displayAvatarURL({ dynamic: true }));
-    message.channel.send(memberEmbed);
+    message.channel.send({ embeds: [memberEmbed] });
   }
 }
 

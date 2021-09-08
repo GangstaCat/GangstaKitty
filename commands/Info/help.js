@@ -1,23 +1,23 @@
 module.exports.run = async (bot, message, args) => {
+  console.log("does it work here?")
   const { MessageEmbed } = require('discord.js')
   if (!args[0]) {
     let [info, fun, moderation] = ["Info", "Fun", "Moderation"]
       .map(category => bot.commands.filter(c => c.data.category === category).map(c => `\`${c.data.name}\``));
 
-    let embed = new MessageEmbed()
+    const embed = new MessageEmbed()
       .setColor("#007DFF")
       .setTitle(`Commands - ${bot.commands.size}`)
       .setDescription("help [command]")
       .addField(`Information - ${info.length}`, info.join(" "))
       .addField(`Fun - ${fun.length}`, fun.join(" "))
       .addField(`Moderation - ${moderation.length}`, moderation.join(" "))
-      .addField("Note", "If i don't respond to a command: 1: check if there are typos in your command. 2: If you're sure what you've typed is correct, there might be an error. please mention GangstaCat when this happens")
       .setFooter(`${message.author.tag}`, message.author.displayAvatarURL({ dynamic: true }));
-    message.channel.send(embed);
+    message.channel.send({ embeds: [embed] });
   }
   else {
     let command = bot.commands.get(args[0]) || bot.commands.find(cmd => cmd.data.aliases.includes(args[0]));
-    if (!command) return message.reply("that is not a command");
+    if (!command) return message.reply({ content: "that is not a command" });
 
     let commandEmbed = new MessageEmbed()
       .setColor("#007DFF")
@@ -30,8 +30,8 @@ module.exports.run = async (bot, message, args) => {
       .addField("Examples", command.data.examples)
       .setFooter(`${message.author.tag}・Arguments in <> are required, [] are optional`, message.author.displayAvatarURL({ dynamic: true }))
 
-
-    message.channel.send(commandEmbed);
+    // message.channel.send({ content: "Help for specific commands is disabled. Please wait until i find a fix" })
+    // message.channel.send({ embeds: [commandEmbed] });
   }
 
 }
@@ -42,6 +42,6 @@ module.exports.data = {
   category: "Info",
   aliases: ["commands"],
   requires: "none",
-  usage: ["help [command]"],
+  usage: "help [command]",
   examples: ["help", "help ping"]
 }

@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args) => {
     .addField('And lastly:', "Thanks to the people in **Discord.js - Imagine a bot**, for helping me solve extremely plain errors")
     .setFooter(`${message.author.tag}`, message.author.displayAvatarURL({ dynamic: true }));
 
-  message.channel.send(wothxEmbed);
+  message.channel.send({ embeds: [wothxEmbed] });
 }
 
 module.exports.data = {

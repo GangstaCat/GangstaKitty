@@ -1,5 +1,5 @@
 module.exports.run = async (bot, message, args) => {
-    message.channel.send("https://cdn.discordapp.com/attachments/847525236500332607/861923854339670036/183.jpg")
+    message.channel.send({ content: "https://cdn.discordapp.com/attachments/847525236500332607/861923854339670036/183.jpg" })
 }
 
 module.exports.data = {

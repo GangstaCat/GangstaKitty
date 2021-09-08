@@ -1,6 +1,6 @@
 module.exports.run = async (bot, message, args) => {
     if (!args.length) {
-        return message.reply("please provide a quote");
+        return message.reply({ content: "please provide a quote" });
     }
     const { MessageEmbed } = require("discord.js");
     const quoteEmbed = new MessageEmbed()
@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args) => {
         .addField('Quote', `${args.join(' ')} \n-${message.author}, 2021`)
 
     message.delete();
-    message.channel.send(quoteEmbed);
+    message.channel.send({ embeds: [quoteEmbed] });
 }
 
 module.exports.data = {

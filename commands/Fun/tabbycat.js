@@ -21,7 +21,7 @@ module.exports.run = async (bot, message, args) => {
   const randomCat = randomNumber(0, tabbyCats.length);
   const catString = tabbyCats[randomCat];
 
-  message.channel.send(catString);
+  message.channel.send({ content: catString });
 }
 
 module.exports.data = {

@@ -5,7 +5,7 @@ const { Client, Intents, Collection } = require("discord.js");
 const bot = new Client({
   intents: [
     Intents.FLAGS.GUILDS,
-    Intents.FLAGS.GUILD_MEMBERS
+    Intents.FLAGS.GUILD_MESSAGES
   ]
 });
 
@@ -35,22 +35,22 @@ bot.on("ready", () => {
 });
 
 //command handler
-bot.on("message", async msg => {
-  if (!msg.content.toLowerCase().startsWith(prefix.toLowerCase()) || msg.author.bot) return;
-  const args = msg.content.slice(prefix.length).trim().split(/ +/),
+bot.on("messageCreate", async message => {
+  if (!message.content.toLowerCase().startsWith(prefix.toLowerCase()) || message.author.bot) return;
+  const args = message.content.slice(prefix.length).trim().split(/ +/),
     commandName = args.shift().toLowerCase();
 
   let command = bot.commands.get(commandName) || bot.commands.find(cmd => cmd.data.aliases.includes(commandName));
-
   if (command) {
     try {
-      await command.run(bot, msg, args);
+      await command.run(bot, message, args);
     } catch (e) {
-      msg.channel.send("an error occured while trying to execute that command <a:confuzzled:860924268370722846>")
-      console.error(`${msg.guild.name} - #${msg.channel.name} - ${msg.channel.id}-${msg.id}\n"${msg.content}"\n`, e.stack);
+      message.channel.send({ content: "an error occured while trying to execute that command <a:confuzzled:860924268370722846>" })
+      console.error(`${message.guild.name} - #${message.channel.name} - ${message.channel.id}-${message.id}\n"${message.content}"\n`, e.stack);
     }
   }
 }
 
+
   //the bot login. crucial for getting the bot online
-  , bot.login(process.env.token));
+  , bot.login("ODQ3NzQzMDEyODUxMjg2MDI3.YLCgNA.snyhHtuTwGbmEl4RCZC0g_2Xnh0"));

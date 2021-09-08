@@ -10,13 +10,13 @@ module.exports.run = async (bot, message, args) => {
             memberTarget.roles.add(mainRole.id);
             memberTarget.roles.remove(mutedRole.id);
 
-            message.channel.send(`<@${memberTarget.user.id}> can talk again!`);
+            message.channel.send({ content: `<@${memberTarget.user.id}> can talk again!` });
         }
         else {
-            message.reply("That user does not exist");
+            message.reply({ content: "That user does not exist" });
         }
     } else {
-        message.reply("You do not have the correct permissions to use this command")
+        message.reply({ content: "You do not have the correct permissions to use this command" })
     }
 }
 

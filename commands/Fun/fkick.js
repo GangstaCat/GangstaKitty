@@ -2,7 +2,7 @@ module.exports.run = async (bot, message, args) => {
   const member = message.mentions.users.first();
   if (member) {
     const memberTarget = message.guild.members.cache.get(member.id);
-    message.channel.send(":white_check_mark: User successfully kicked!");
+    message.channel.send({ content: ":white_check_mark: User successfully kicked!" });
   } else {
     message.channel.send(":x: Please mention a member to kick them");
   }

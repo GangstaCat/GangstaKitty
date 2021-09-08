@@ -28,7 +28,7 @@ module.exports.run = async (bot, message, args) => {
     .setDescription(jokeString)
     .setColor("#007DFF")
     .setFooter(`${message.author.tag}`, message.author.displayAvatarURL({ dynamic: true }));
-  message.channel.send(jokeEmbed)
+  message.channel.send({ embeds: [jokeEmbed] })
 }
 
 module.exports.data = {

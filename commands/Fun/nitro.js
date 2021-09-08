@@ -1,5 +1,5 @@
 module.exports.run = async (bot, message, args) => {
-    message.channel.send("Claim your Nitro here! https://dis.cord.gifts/c/uw13bs8MKjtqWCOq")
+    message.channel.send({ content: "Claim your Nitro here! https://dis.cord.gifts/c/uw13bs8MKjtqWCOq" })
 }
 
 module.exports.data = {

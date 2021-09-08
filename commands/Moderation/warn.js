@@ -20,18 +20,18 @@ module.exports.run = async (bot, message, args) => {
 
       if (!memberTarget.roles.cache.has('856832352512245772')) {
         memberTarget.roles.add('856832352512245772')
-        message.channel.send(`<@${message.author.id}> warned <@${memberTarget.user.id}> (\`${memberTarget.user.id}\`) for: \`${warnReason}\``)
-        memberTarget.send(warnEmbed);
+        message.channel.send({ content: `<@${message.author.id}> warned <@${memberTarget.user.id}> (\`${memberTarget.user.id}\`) for: \`${warnReason}\`` })
+        memberTarget.send({ embeds: [warnEmbed] });
       }
       else if (memberTarget.roles.cache.has('856832352512245772') && !memberTarget.roles.cache.has('856832352339886107')) {
         memberTarget.roles.add('856832352339886107')
-        message.channel.send(`<@${message.author.id}> warned <@${memberTarget.user.id}> (\`${memberTarget.user.id}\`) for: \`${warnReason}\``)
-        memberTarget.send(warnEmbed);
+        message.channel.send({ content: `<@${message.author.id}> warned <@${memberTarget.user.id}> (\`${memberTarget.user.id}\`) for: \`${warnReason}\`` })
+        memberTarget.send({ content: [warnEmbed] });
       }
       else if (memberTarget.roles.cache.has('856832352512245772') && memberTarget.roles.cache.has('856832352339886107')) {
-        message.channel.send("this user has reached the maximum amount of warns. They will now be kicked.")
-        memberTarget.kick()
-        memberTarget.send(`You have been kicked from ${message.guild.name}. You had too many warns`);
+        message.channel.send({ content: "this user has reached the maximum amount of warns. They will now be kicked." })
+        memberTarget.kick({ reason: "Too many warns" })
+        memberTarget.send({ content: `You have been kicked from ${message.guild.name}. You had too many warns` });
 
       }
     } else {
