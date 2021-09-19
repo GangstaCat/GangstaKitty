@@ -1,14 +1,22 @@
+const { MessageEmbed, Message } = require("discord.js")
 module.exports.run = async (bot, message, args) => {
   if (args[0]) {
     const user = message.mentions.users.first();
     if (!user) {
       return message.reply({ content: 'Please use a proper mention if you want to see someone elses avatar.' });
     }
+    const embed = new MessageEmbed()
+      .setTitle(`${user.username}'s avatar:`)
+      .setImage(user.displayAvatarURL({ dynamic: true }))
+      .setFooter(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
 
-    return message.channel.send({ content: `${user.username}'s avatar: ${user.displayAvatarURL({ dynamic: true })}` });
+    return message.channel.send({ embeds: [embed] });
   }
-
-  return message.channel.send({ content: `${message.author.username}, your avatar: ${message.author.displayAvatarURL({ dynamic: true })}` });
+  const embed2 = new MessageEmbed()
+    .setTitle(`${message.author.username}'s avatar:`)
+    .setImage(message.author.displayAvatarURL({ dynamic: true }))
+    .setFooter(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
+  return message.channel.send({ embeds: [embed2] });
 }
 
 module.exports.data = {

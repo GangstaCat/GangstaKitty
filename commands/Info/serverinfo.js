@@ -1,6 +1,6 @@
 const { MessageEmbed } = require("discord.js")
 module.exports.run = async (bot, message, args) => {
-  // variables
+  // properties of the server
   const guildName = message.guild.name;
   const guildID = message.guild.id;
   const guildCreation = message.guild.createdAt;

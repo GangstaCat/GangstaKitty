@@ -23,7 +23,7 @@ module.exports.run = async (bot, message, args) => {
       .setTitle(member.user.tag)
       .setColor(member.displayHexColor)
       .setThumbnail(member.user.displayAvatarURL({ dynamic: true }))
-      .setDescription(`User ID: ${member.id} \n<@${member.user.id}> \nColor: ${member.displayHexColor} \n**Status:** ${member.presence.status} \n**Joined:** ${member.joinedAt} \n**Registered:** ${member.user.createdAt} \n**Roles - ${memberRoles.length}** \n ${memberRoles}`)
+      .setDescription(`User ID: ${member.id} \n<@${member.user.id}> \nColor: ${member.displayHexColor} \n**Joined:** ${member.joinedAt} \n**Registered:** ${member.user.createdAt} \n**Roles - ${memberRoles.length}** \n ${memberRoles}`)
       .setFooter(`${message.author.tag}`, message.author.displayAvatarURL({ dynamic: true }));
     message.channel.send({ embeds: [memberEmbed] });
   }

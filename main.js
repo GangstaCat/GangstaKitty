@@ -1,6 +1,5 @@
-console.log(process.version)
-
 //variables
+require("dotenv").config();
 const { Client, Intents, Collection } = require("discord.js");
 const bot = new Client({
   intents: [
@@ -53,4 +52,4 @@ bot.on("messageCreate", async message => {
 
 
   //the bot login. crucial for getting the bot online
-  , bot.login("ODQ3NzQzMDEyODUxMjg2MDI3.YLCgNA.snyhHtuTwGbmEl4RCZC0g_2Xnh0"));
+  , bot.login(process.env.DISCORD_TOKEN));
