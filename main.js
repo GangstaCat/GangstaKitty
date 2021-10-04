@@ -31,7 +31,7 @@ for (let folder of fs.readdirSync("./commands/")) {
 //online log and presence
 bot.on("ready", () => {
   console.log('GangstaKitty is online!');
-  bot.user.setActivity(`+help. 21 days until Gangsta's birthday 🥳`, { type: 'LISTENING' })
+  bot.user.setActivity(`+help. 20 days until Gangsta's birthday 🥳`, { type: 'STREAMING' })
 });
 
 //command handler
