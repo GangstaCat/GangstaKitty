@@ -25,12 +25,13 @@ for (let folder of fs.readdirSync("./commands/")) {
     bot.commands.set(command.data.name, command);
     console.log(`(${++totalCommandCount}) ${categoryCount}-${++commandCount}: ${file}`);
   }
+  console.log("All commands loaded. Going online");
 }
 
 //online log and presence
 bot.on("ready", () => {
   console.log('GangstaKitty is online!');
-  bot.user.setActivity('with GangstaCat. +help', { type: 'PLAYING' })
+  bot.user.setActivity(`+help. 21 days until Gangsta's birthday 🥳`, { type: 'LISTENING' })
 });
 
 //command handler
@@ -49,6 +50,14 @@ bot.on("messageCreate", async message => {
     }
   }
 }
+
+  //triggers
+  , bot.on("messageCreate", m => {
+    if (m.author.bot) return; if (m.content == "Gangsta") { m.channel.send({ content: "https://cdn.discordapp.com/attachments/856832353409302538/889431236693614642/GangstaCat.png" }) }
+  })
+  , bot.on("messageCreate", m => {
+    if (m.author.bot) return; if (m.content == "stfu") { m.channel.send({ content: "https://cdn.discordapp.com/attachments/553322925395017732/739837616014491698/video0.mp4" }) }
+  })
 
 
   //the bot login. crucial for getting the bot online

@@ -18,19 +18,18 @@ module.exports.run = async (bot, message, args) => {
     let command = bot.commands.get(args[0]) || bot.commands.find(cmd => cmd.data.aliases.includes(args[0]));
     if (!command) return message.reply({ content: "that is not a command" });
 
-    // let commandEmbed = new MessageEmbed()
-    //   .setColor("#007DFF")
-    //   .setTitle(command.data.name)
-    //   .setDescription(command.data.description)
-    //   .addField("Category", command.data.category)
-    //   .addField("Aliases", command.data.aliases, true)
-    //   .addField("Requires", command.data.requires)
-    //   .addField("Usage", command.data.usage, true)
-    //   .addField("Examples", command.data.examples)
-    //   .setFooter(`${message.author.tag}・Arguments in <> are required, [] are optional`, message.author.displayAvatarURL({ dynamic: true }))
+    let commandEmbed = new MessageEmbed()
+      .setColor("#007DFF")
+      .setTitle(command.data.name)
+      .setDescription(command.data.description)
+      .addField("Category", command.data.category)
+      .addField("Aliases", command.data.aliases, true)
+      .addField("Requires", command.data.requires)
+      .addField("Usage", command.data.usage, true)
+      .addField("Examples", command.data.examples)
+      .setFooter(`${message.author.tag}・Arguments in <> are required, [] are optional`, message.author.displayAvatarURL({ dynamic: true }))
 
-    message.channel.send({ content: "Help for specific commands is temporarily disabled. Please wait until i find a fix" })
-    // message.channel.send({ embeds: [commandEmbed] });
+    message.channel.send({ embeds: [commandEmbed] });
   }
 
 }

@@ -10,12 +10,12 @@ module.exports.run = async (bot, message, args) => {
     channelReason = "";
     message.guild.channels.create(channelName, { topic: channelTopic })
       .catch(console.error)
-    return message.channel.send({ content: `#${channelName} sucessfully created` })
+    return message.channel.send({ content: `channel sucessfully created` })
   }
   else if (channelName && channelTopic) {
     message.guild.channels.create(channelName, { topic: channelTopic })
       .catch(console.error)
-    return message.channel.send({ content: `#${channelName} sucessfully created` })
+    return message.channel.send({ content: `channel sucessfully created` })
   }
 }
 
