@@ -38,7 +38,7 @@ module.exports.data = {
   name: "help",
   description: "Help with commands",
   category: "Info",
-  aliases: ["commands"],
+  aliases: "commands",
   requires: "none",
   usage: "help [command]",
   examples: ["help", "help ping"]
