@@ -28,6 +28,7 @@ module.exports.data = {
   description: "lists info about the server",
   category: "Info",
   aliases: ["si", "guildinfo", "gi"],
+  requires: "None",
   usage: "serverinfo",
   examples: "serverinfo"
 }
