@@ -31,7 +31,7 @@ for (let folder of fs.readdirSync("./commands/")) {
 //online log and presence
 bot.on("ready", () => {
   console.log('GangstaKitty is online!');
-  bot.user.setActivity(`+help. 20 days until Gangsta's birthday 🥳`, { type: 'STREAMING', url: "https://twitch.tv/gangstacatttv" })
+  bot.user.setActivity(`+help. 19 days until Gangsta's birthday 🥳`, { type: 'STREAMING', url: "https://twitch.tv/gangstacatttv" })
 });
 
 //command handler
