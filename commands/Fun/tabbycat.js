@@ -12,7 +12,9 @@ module.exports.run = async (bot, message, args) => {
     "http://tabbycats.club/cat/8k40z0",
     "http://tabbycats.club/cat/mzi4yn",
     "http://tabbycats.club/cat/9m2i23",
-    "http://tabbycats.club/cat/c6w9j0"];
+    "http://tabbycats.club/cat/c6w9j0",
+    "https://tabbycats.club/cat/1hw09k",
+    "https://tabbycats.club/cat/jlxqy9",];
 
   const randomNumber = (min, max) => {
     return Math.floor(Math.random() * (max - min) + min)
