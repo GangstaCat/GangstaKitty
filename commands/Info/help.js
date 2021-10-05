@@ -47,5 +47,5 @@ module.exports.data = {
   aliases: "commands",
   requires: "none",
   usage: "help [command]",
-  examples: ["help", "help ping"]
+  examples: "help ping"
 }
