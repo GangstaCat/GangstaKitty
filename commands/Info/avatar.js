@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args) => {
     }
     const embed = new MessageEmbed()
       .setTitle(`${user.username}'s avatar:`)
-      .setImage(user.displayAvatarURL({ dynamic: true }))
+      .setImage(user.avatar)
       .setFooter(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
 
     return message.channel.send({ embeds: [embed] });
