@@ -15,8 +15,8 @@ async function findUser(client, context, query) {
             force: true,
         })));
 }
-async function run(_bot, message, args) {
-    const user = await findUser(_bot, message, args[0] ?? "");
+async function run(client, message, args) {
+    const user = await findUser(client, message, args[0] ?? "");
     if (!user) {
         return message.reply("❌ Can't find that user.");
     }
@@ -28,7 +28,7 @@ async function run(_bot, message, args) {
         color: 3092790,
         footer: {
             text: "Avatar",
-            iconURL: _bot.user?.displayAvatarURL({ size: 4096 })
+            iconURL: client.user?.displayAvatarURL({ size: 4096 })
         }
     });
     return message.channel.send({ embeds: [embed] });
