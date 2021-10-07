@@ -58,14 +58,17 @@ bot.on("messageCreate", async message => {
   , bot.on("interactionCreate", async interaction => {
     if (!interaction.isCommand()) return;
 
-    const { commandName } = interaction;
+    const command = client.commands.get(interaction.commandName);
 
+    if (!command) return;
 
-    if (commandName === "ping") {
-      await interaction.reply("pong!")
-    } else if (commandName === "beep") {
-      interaction.reply("boop!")
+    try {
+      await command.execute(interaction);
+    } catch (error) {
+      console.error(error);
+      await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
     }
+
   })
 
   //triggers
