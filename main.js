@@ -10,6 +10,8 @@ const bot = new Client({
 
 const prefix = '+';
 
+const { MessageActionRow, MessageButton } = require('discord.js');
+
 const fs = require('fs');
 
 
@@ -53,6 +55,19 @@ bot.on("messageCreate", async message => {
   }
 }
 
+  , bot.on("interactionCreate", async interaction => {
+    if (!interaction.isCommand()) return;
+
+    const { commandName } = interaction;
+
+
+    if (commandName === "ping") {
+      await interaction.reply("pong!")
+    } else if (commandName === "beep") {
+      interaction.reply("boop!")
+    }
+  })
+
   //triggers
   , bot.on("messageCreate", m => {
     if (m.author.bot) return; if (m.content == "Gangsta") { m.channel.send({ content: "https://cdn.discordapp.com/attachments/856832353409302538/889431236693614642/GangstaCat.png" }) }
@@ -60,7 +75,25 @@ bot.on("messageCreate", async message => {
   , bot.on("messageCreate", m => {
     if (m.author.bot) return; if (m.content == "stfu") { m.channel.send({ content: "https://cdn.discordapp.com/attachments/553322925395017732/739837616014491698/video0.mp4" }) }
   })
+  ,
+  //buttons
+
+  // bot.on('interactionCreate', async interaction => {
+  // 	if (!interaction.isCommand()) return;
+
+  // 	if (interaction.commandName === 'ping') {
+  // 		const row = new MessageActionRow()
+  // 			.addComponents(
+  // 				new MessageButton()
+  // 					.setCustomId('primary')
+  // 					.setLabel('Primary')
+  // 					.setStyle('PRIMARY'),
+  // 			);
+
+  // 		await interaction.reply({ content: 'Pong!', components: [row] });
+  // 	}
+  // }))
 
 
   //the bot login. crucial for getting the bot online
-  , bot.login(process.env.DISCORD_TOKEN));
+  bot.login(process.env.DISCORD_TOKEN))
