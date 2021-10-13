@@ -53,12 +53,15 @@ export enum Color {
 export enum Brands {
   SOME_RANDOM_API = "sra",
   PXL_API = "pxlapi",
+  EIGHT_BALL_DELEGATOR = "8balldelegator",
 }
 export const BrandIcons: Record<Brands, string> = {
   [Brands.SOME_RANDOM_API]: "https://i.some-random-api.ml/logo.png",
   [Brands.PXL_API]: "https://pxlapi.dev/images/logo-small-transparent.png",
+  [Brands.EIGHT_BALL_DELEGATOR]: "https://8ball.delegator.com/images/8ball.png",
 };
 export const BrandNames: Record<Brands, string> = {
   [Brands.SOME_RANDOM_API]: "Some Random Api",
   [Brands.PXL_API]: "PXL API",
+  [Brands.EIGHT_BALL_DELEGATOR]: "Eight Ball Delegator",
 };

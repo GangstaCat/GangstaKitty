@@ -31,7 +31,8 @@ export declare enum Color {
 }
 export declare enum Brands {
     SOME_RANDOM_API = "sra",
-    PXL_API = "pxlapi"
+    PXL_API = "pxlapi",
+    EIGHT_BALL_DELEGATOR = "8balldelegator"
 }
 export declare const BrandIcons: Record<Brands, string>;
 export declare const BrandNames: Record<Brands, string>;
