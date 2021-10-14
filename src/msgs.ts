@@ -16,6 +16,13 @@ export const messages = {
       user: "❌ You ({CAUSE}) are using ",
     },
   },
+  on: {
+    ready:
+      "📦 {USER} is ready with {GUILD_COUNT} guilds ({UNAVAILABLE_GUILDS} guilds are unavailable)",
+    unavailableUser: "❌ Unable to fetch this bot (am I in a blocked area?)",
+    isNowAvailable: "✅ {GUILD} has become available",
+    isNoLongerAvailable: "❌ {GUILD} has become unavailable",
+  },
 };
 export function replace(
   that: string,

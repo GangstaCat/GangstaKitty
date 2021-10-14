@@ -1,13 +1,26 @@
 import { ActivityTypes } from "detritus-client/lib/constants";
 import { config } from "./config";
 import { client, commands } from "./globals";
+import { messages, replace } from "./msgs";
 
 commands.addMultipleIn("/commands", { subdirectories: true });
 
 // events
 
 client.on("ready", () => {
-  console.log(`${client.user} has come online`);
+  if (!client.user) {
+    return console.log(messages.on.unavailableUser);
+  }
+  console.log(
+    replace(messages.on.ready, [
+      ["{USER}", `${client.user.tag} ${client.user.id}`],
+      ["{GUILD_COUNT}", client.guilds.size],
+      [
+        "{UNAVAILABLE_GUILDS}",
+        client.guilds.filter((v) => v.unavailable).length,
+      ],
+    ])
+  );
   let now = new Date();
   let birthday = new Date(now.getFullYear(), 9, 24);
   if (
@@ -26,3 +39,7 @@ client.on("ready", () => {
     ],
   });
 });
+
+async () => {
+  commands.run();
+};
