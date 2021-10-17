@@ -1,9 +1,13 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BrandNames = exports.BrandIcons = exports.Brands = exports.Color = exports.interactions = exports.commands = exports.client = exports.PXL_API_KEY = void 0;
 const detritus_client_1 = require("detritus-client");
+const dotenv_1 = __importDefault(require("dotenv"));
 const config_1 = require("./config");
-require("dotenv").config();
+dotenv_1.default.config();
 exports.PXL_API_KEY = "5a913c66a0edaf07239c2c5739b12603";
 exports.client = new detritus_client_1.ShardClient(process.env.DISCORD_BOT_TOKEN, {
     isBot: true,

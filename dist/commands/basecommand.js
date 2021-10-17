@@ -31,7 +31,7 @@ class BaseCommand extends command_1.Command {
         if (error.stack) {
             stack = utils_1.Markup.codeblock(error.stack, { language: "js" });
         }
-        let str = (0, msgs_1.replace)(msgs_1.messages.command.error, [
+        let str = msgs_1.replace(msgs_1.messages.command.error, [
             ["{WHILE}", undefined],
             ["{NAME}", error.name],
             ["{MESSAGE}", error.message],
@@ -45,7 +45,7 @@ class BaseCommand extends command_1.Command {
         if (error.stack) {
             stack = utils_1.Markup.codeblock(error.stack, { language: "js" });
         }
-        let str = (0, msgs_1.replace)(msgs_1.messages.command.error, [
+        let str = msgs_1.replace(msgs_1.messages.command.error, [
             ["{WHILE}", " while running"],
             ["{NAME}", error.name],
             ["{MESSAGE}", error.message],
@@ -55,22 +55,22 @@ class BaseCommand extends command_1.Command {
     }
     onPermissionsFail(context, permissions) {
         const formattedPermissions = permissions
-            .map((v) => (0, bitfieldToArray_1.bitfieldToArray)(v, Object.keys(constants_1.Permissions)))
+            .map((v) => bitfieldToArray_1.bitfieldToArray(v, Object.keys(constants_1.Permissions)))
             .flat(1)
-            .map((v) => (0, capitalizeWords_1.capitalizeWords)(v.toLowerCase()))
+            .map((v) => capitalizeWords_1.capitalizeWords(v.toLowerCase()))
             .join(", ");
-        const str = (0, msgs_1.replace)(msgs_1.messages.command.missingPermissions, [
+        const str = msgs_1.replace(msgs_1.messages.command.missingPermissions, [
             ["{PERMISSIONS}", formattedPermissions],
         ]);
         return context.editOrReply(str);
     }
     onPermissionsFailClient(context, permissions) {
         const formattedPermissions = permissions
-            .map((v) => (0, bitfieldToArray_1.bitfieldToArray)(v, Object.keys(constants_1.Permissions)))
+            .map((v) => bitfieldToArray_1.bitfieldToArray(v, Object.keys(constants_1.Permissions)))
             .flat(1)
-            .map((v) => (0, capitalizeWords_1.capitalizeWords)(v.toLowerCase()))
+            .map((v) => capitalizeWords_1.capitalizeWords(v.toLowerCase()))
             .join(", ");
-        const str = (0, msgs_1.replace)(msgs_1.messages.command.missingPermissionsClient, [
+        const str = msgs_1.replace(msgs_1.messages.command.missingPermissionsClient, [
             ["{PERMISSIONS}", formattedPermissions],
         ]);
         return context.editOrReply(str);
@@ -85,9 +85,9 @@ class BaseCommand extends command_1.Command {
             else if (context.guild)
                 cause = `\`${context.guild.name}\``;
             const command = global ? "commands" : `\`${context.command.name}\``;
-            const time = (0, time_1.simpleGetLongAgo)(Date.now() - rate.ratelimit.duration);
-            const remaining = (0, time_1.simpleGetLongAgo)(Date.now() - rate.remaining);
-            context.reply((0, msgs_1.replace)(msgs_1.messages.command.ratelimit[rate.ratelimit.type] + msgs_1.messages.command.ratelimit.message, [
+            const time = time_1.simpleGetLongAgo(Date.now() - rate.ratelimit.duration);
+            const remaining = time_1.simpleGetLongAgo(Date.now() - rate.remaining);
+            context.reply(msgs_1.replace(msgs_1.messages.command.ratelimit[rate.ratelimit.type] + msgs_1.messages.command.ratelimit.message, [
                 ["{CAUSE}", cause],
                 ["{COMMAND}", command],
                 ["{COMMANDS}", rate.item.usages],
@@ -104,7 +104,7 @@ class BaseCommand extends command_1.Command {
         for (let key in errors)
             description.push(`\`${key}\`: ${errors[key].message}`);
         description.push(`Proper Usage:
-\`\`\`lua\n${(0, usage_1.generateUsage)(context.command)}\`\`\``);
+\`\`\`lua\n${usage_1.generateUsage(context.command)}\`\`\``);
         return context.editOrReply(description.join("\n"));
     }
 }

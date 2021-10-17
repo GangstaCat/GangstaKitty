@@ -51,7 +51,7 @@ function getLongAgo(ts, limiter, diffSinceNow = true, lowestUnit = undefined) {
 exports.getLongAgo = getLongAgo;
 const simpleGetLongAgo = (ts) => getLongAgo(ts, 2, undefined, undefined);
 exports.simpleGetLongAgo = simpleGetLongAgo;
-const expandMs = (ms) => (0, exports.simpleGetLongAgo)(Date.now() - ms);
+const expandMs = (ms) => exports.simpleGetLongAgo(Date.now() - ms);
 exports.expandMs = expandMs;
 const shortTimeMap = new Map([
     ["ml", 1000 * 60 * 60 * 24 * 365 * 10 * 10 * 10],

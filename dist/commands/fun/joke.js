@@ -17,7 +17,7 @@ class JokeCommand extends basecommand_1.BaseCommand {
         });
     }
     async run(context, _args) {
-        const embed = (0, embed_1.createBrandEmbed)(globals_1.Brands.SOME_RANDOM_API, context.user);
+        const embed = embed_1.createBrandEmbed(globals_1.Brands.SOME_RANDOM_API, context.user);
         const sra = new pariah_1.SomeRandomAPI();
         const { joke } = await sra.joke();
         embed

@@ -12,5 +12,11 @@ export declare const messages: {
             user: string;
         };
     };
+    on: {
+        ready: string;
+        unavailableUser: string;
+        isNowAvailable: string;
+        isNoLongerAvailable: string;
+    };
 };
 export declare function replace(that: string, what: Replacers, _default?: Replacers): string;

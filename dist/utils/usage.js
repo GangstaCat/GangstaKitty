@@ -27,7 +27,7 @@ const fillArrayWithBounds = (min, max) => {
     return res;
 };
 exports.fillArrayWithBounds = fillArrayWithBounds;
-const isConsecutive = (array) => (0, exports.fillArrayWithBounds)((0, exports.min)(array), (0, exports.max)(array)).every((e) => !array.includes(e));
+const isConsecutive = (array) => exports.fillArrayWithBounds(exports.min(array), exports.max(array)).every((e) => !array.includes(e));
 exports.isConsecutive = isConsecutive;
 [...Array(100).keys()].map((i) => i + (i + 1)).join(", ");
 function generateUsage(command) {
@@ -41,9 +41,9 @@ function formatArgs(args) {
         var type = v.type;
         if (v.choices && v.choices.every((v) => !isNaN(parseFloat(v))))
             if (v.choices.includes(Infinity))
-                type = `${(0, exports.min)(v.choices) === Infinity ? 0 : (0, exports.min)(v.choices)} ..`;
-            else if ((0, exports.isConsecutive)(v.choices))
-                type = `${(0, exports.min)(v.choices)}..${(0, exports.max)(v.choices)}`;
+                type = `${exports.min(v.choices) === Infinity ? 0 : exports.min(v.choices)} ..`;
+            else if (exports.isConsecutive(v.choices))
+                type = `${exports.min(v.choices)}..${exports.max(v.choices)}`;
         if (v.choices && v.choices.every((v) => typeof v === "string"))
             type = v.choices.join("|");
         var required = v.required;

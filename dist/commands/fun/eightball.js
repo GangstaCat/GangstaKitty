@@ -21,7 +21,7 @@ class EightBallCommand extends basecommand_1.BaseCommand {
     }
     async run(context, args) {
         const ball = await new pariah_1.EightBallDelegator().json(args.text);
-        const embed = (0, embed_1.createBrandEmbed)(globals_1.Brands.EIGHT_BALL_DELEGATOR, context.user);
+        const embed = embed_1.createBrandEmbed(globals_1.Brands.EIGHT_BALL_DELEGATOR, context.user);
         embed.setTitle(ball.magic.question);
         embed.setDescription(utils_1.Markup.codeblock(ball.magic.answer));
         const EmbedColors = {
