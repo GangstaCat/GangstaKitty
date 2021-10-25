@@ -35,7 +35,7 @@ const currentDate = new Date();
 const day = currentDate.getDate();
 bot.on("ready", () => {
   console.log('GangstaKitty is online!');
-  bot.user.setActivity(`+help . ${24 - day} days until Gangsta's birthday 🥳`, { type: 'STREAMING', url: "https://twitch.tv/gangstacatttv" })
+  bot.user.setActivity(`+help.`, { type: 'STREAMING', url: "https://twitch.tv/gangstacatttv" })
 });
 
 //command handler
