@@ -6,4 +6,5 @@ export const config = {
     { duration: 5000, limit: 10, type: "channel" },
     { duration: 10000, limit: 20, type: "guild" },
   ],
+  storage_channel: "put stuff here",
 };

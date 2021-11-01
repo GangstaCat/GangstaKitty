@@ -6,6 +6,7 @@ import {
 import dotenv from "dotenv";
 import { config } from "./config";
 dotenv.config();
+
 export const PXL_API_KEY = "5a913c66a0edaf07239c2c5739b12603"; // put this in your process env when this commit is out !!!!!!!!!!!!!!!!!!!
 
 export const client = new ShardClient(process.env.DISCORD_BOT_TOKEN!, {
@@ -18,6 +19,8 @@ export const commands = new CommandClient(client, {
 export const interactions = new InteractionCommandClient(client, {
   useClusterClient: false,
 });
+
+export const LoafCats = [];
 
 export enum Color {
   EMBED = 3092790, // 0x2f3136
