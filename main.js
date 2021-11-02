@@ -35,7 +35,7 @@ const currentDate = new Date();
 const day = currentDate.getDate();
 bot.on("ready", () => {
   console.log('GangstaKitty is online!');
-  bot.user.setActivity(`+help.`, { type: 'STREAMING', url: "https://twitch.tv/gangstacatttv" })
+  bot.user.setActivity(`+help. Arcs is lazy`, { type: 'STREAMING', url: "https://twitch.tv/gangstacatttv" })
 });
 
 //command handler
