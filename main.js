@@ -35,7 +35,7 @@ const currentDate = new Date();
 const day = currentDate.getDate();
 bot.on("ready", () => {
   console.log('GangstaKitty is online!');
-  bot.user.setActivity(`+help. Arcs is lazy`, { type: 'STREAMING', url: "https://twitch.tv/gangstacatttv" })
+  bot.user.setActivity(`+help. ${32 - day} days until new year`, { type: 'STREAMING', url: "https://twitch.tv/gangstacatttv" })
 });
 
 //command handler
@@ -99,4 +99,5 @@ bot.on("messageCreate", async message => {
 
 
   //the bot login. crucial for getting the bot online
+  // bot.login(process.env.token))
   bot.login(process.env.token))
