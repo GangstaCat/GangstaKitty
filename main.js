@@ -31,11 +31,9 @@ for (let folder of fs.readdirSync("./commands/")) {
 }
 
 //online log and presence
-const currentDate = new Date();
-const day = currentDate.getDate();
 bot.on("ready", () => {
   console.log('GangstaKitty is online!');
-  bot.user.setActivity(`+help. ${32 - day} days until new year`, { type: 'STREAMING', url: "https://twitch.tv/gangstacatttv" })
+  bot.user.setActivity(`+help. suffering`, { type: 'STREAMING', url: "https://twitch.tv/gangstacatttv" })
 });
 
 //command handler
