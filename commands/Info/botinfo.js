@@ -5,9 +5,8 @@ module.exports.run = async (bot, message, args) => {
     .setTitle('Bot info')
     .setAuthor('GangstaKitty')
     .setDescription("General info about this bot, it's purpose and more")
-    .setThumbnail("https://cdn.discordapp.com/attachments/856832353409302538/857957150650531860/loafcate.png")
-    .addField('Purpose', "I am a bot made by GangstaCat, and i am personalized to the GangsterCats Discord Server since other bots are broken. For more info about GangstaCat, Please use `+devinfo`")
-    .addField('Twitter', "Did you know i have a Twitter account? Well, now you do! Go follow me. https://twitter.com/GangstaKittyBot")
+    .setThumbnail("https://cdn.discordapp.com/avatars/847743012851286027/386304f1bc3ae79ed4ac148137b028cd.webp?size=4096")
+    .addField('Purpose', "Basically i wanted to make a bot because some bots like mee6 have premium memberships (cringe). I just wanted every feature i could want at my disposal without paying 50 buck a year.")
     .setFooter(`${message.author.tag}`, message.author.displayAvatarURL({ dynamic: true }));
 
   message.channel.send({ embeds: [botEmbed] });
