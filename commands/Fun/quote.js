@@ -5,7 +5,7 @@ module.exports.run = async (bot, message, args) => {
     const { MessageEmbed } = require("discord.js");
     const quoteEmbed = new MessageEmbed()
         .setColor("#007DFF")
-        .addField('Quote', `${args.join(' ')} \n-${message.author}, 2021`)
+        .addField('Quote', `${args.join(' ')} \n-${message.author}, 2022`)
 
     message.delete();
     message.channel.send({ embeds: [quoteEmbed] });
