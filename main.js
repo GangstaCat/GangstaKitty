@@ -33,7 +33,7 @@ for (let folder of fs.readdirSync("./commands/")) {
 //online log and presence
 bot.on("ready", () => {
   console.log('GangstaKitty is online!');
-  bot.user.setActivity(`+help. Fixing spree <:Pepega:853981820131606578>`, { type: 'STREAMING', url: "https://twitch.tv/gangstacatttv" })
+  bot.user.setActivity(`+help. Fixing spree <:Pepega:853981820131606578>`, { type: 'PLAYING' })
 });
 
 //command handler
