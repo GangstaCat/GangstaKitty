@@ -28,7 +28,7 @@ async function run(client, message, args) {
         color: 3092790,
         footer: {
             text: "Avatar",
-            iconURL: client.user?.displayAvatarURL({ size: 4096 })
+            iconURL: message.author.displayAvatarURL({ dynamic: true, size: 4096 })
         }
     });
     return message.channel.send({ embeds: [embed] });
