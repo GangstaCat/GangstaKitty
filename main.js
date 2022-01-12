@@ -33,7 +33,7 @@ for (let folder of fs.readdirSync("./commands/")) {
 //online log and presence
 bot.on("ready", () => {
   console.log('GangstaKitty is online!');
-  bot.user.setActivity(`+help. Fixing spree <:Pepega:853981820131606578>`, { type: 'PLAYING' })
+  bot.user.setActivity(`+help. Fixing spree yay`, { type: 'PLAYING' })
 });
 
 //command handler
