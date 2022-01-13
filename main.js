@@ -13,6 +13,7 @@ const prefix = '+';
 const { MessageActionRow, MessageButton } = require('discord.js');
 
 const fs = require('fs');
+const mongoose = require('mongoose');
 
 
 bot.commands = new Collection();
