@@ -20,7 +20,7 @@ module.exports.run = async (bot, message, args) => {
 module.exports.data = {
   name: "magic8ball",
   description: "Ask the magic 8 ball a question and it gives you an immediate answer!",
-  aliases: ["mb"],
+  aliases: "mb",
   requires: "none",
   category: "Fun",
   usage: "magicball <question>",

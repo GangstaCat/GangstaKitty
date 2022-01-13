@@ -5,9 +5,9 @@ module.exports.run = async (bot, message, args) => {
 module.exports.data = {
     name: "nitro",
     description: "gives free nitro (totally real)",
-    aliases: ["n", "freenitro"],
+    aliases: "n",
     category: "Fun",
     requires: "none",
-    usage: ["nitro"],
-    examples: ["nitro"]
+    usage: "nitro",
+    examples: "nitro"
 }

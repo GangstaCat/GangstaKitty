@@ -26,9 +26,9 @@ module.exports.run = async (bot, message, args) => {
 module.exports.data = {
   name: "fwarn",
   description: "warn someone",
-  aliases: ["fw", "fakewarn"],
+  aliases: "fw",
   category: "Fun",
   requires: "none",
-  usage: ["fwarn <mention>"],
-  examples: ["fwarn @GangstaCat"]
+  usage: "fwarn <mention>",
+  examples: "fwarn @GangstaCat"
 }

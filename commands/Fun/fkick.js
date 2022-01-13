@@ -11,9 +11,9 @@ module.exports.run = async (bot, message, args) => {
 module.exports.data = {
   name: "fkick",
   description: "Kick someone",
-  aliases: ["fk", "fakekick"],
+  aliases: "fk",
   category: "Fun",
   requires: "none",
-  usage: ["fkick <mention>"],
-  examples: ["fkick @GangstaCat"]
+  usage: "fkick <mention>",
+  examples: "fkick @GangstaCat"
 }

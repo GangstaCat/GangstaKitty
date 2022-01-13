@@ -23,9 +23,9 @@ module.exports.run = async (bot, message, args) => {
 module.exports.data = {
     name: "purge",
     description: "Deletes an amount of messages of your choice",
-    aliases: ["hiss"],
+    aliases: "p",
     category: "Moderation",
     requires: "permission: Manage Messages",
-    usage: ["purge <amount>"],
-    examples: ["purge 10"]
+    usage: "purge <amount>",
+    examples: "purge 10"
 }

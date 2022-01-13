@@ -33,8 +33,8 @@ module.exports.data = {
   name: "userinfo",
   description: "displays a user's info, roles and more",
   category: "Info",
-  aliases: ["ui"],
+  aliases: "ui",
   requires: "none",
-  usage: ["userinfo [mention]"],
-  examples: ["userinfo", "userinfo @GangstaCat"]
+  usage: "userinfo [mention]",
+  examples: "userinfo @GangstaCat"
 }

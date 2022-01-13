@@ -35,8 +35,8 @@ module.exports.data = {
   name: "joke",
   description: "Tells you a random joke",
   category: "Fun",
-  aliases: ["j", "jk"],
+  aliases: "j",
   requires: "none",
-  usage: ["joke"],
-  examples: ["joke"]
+  usage: "joke",
+  examples: "joke"
 }

@@ -14,9 +14,9 @@ module.exports.run = async (bot, message, args) => {
 module.exports.data = {
     name: "quote",
     description: "Quote something in a shiny embed",
-    aliases: ["q"],
+    aliases: "q",
     category: "Fun",
     requires: "none",
-    usage: ["quote <your quote here>"],
-    examples: ["quote GangstaCat is cool"]
+    usage: "quote <your quote here>",
+    examples: "quote GangstaCat is cool"
 }

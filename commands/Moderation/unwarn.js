@@ -27,9 +27,9 @@ module.exports.run = async (bot, message, args) => {
 module.exports.data = {
   name: "unwarn",
   description: "unwarns a user",
-  aliases: ["uw"],
+  aliases: "uw",
   category: "Moderation",
   requires: "permission: Manage Roles",
-  usage: ["unwarn <mention>"],
-  examples: ["unwarn @GangstaCat"]
+  usage: "unwarn <mention>",
+  examples: "unwarn @GangstaCat"
 }

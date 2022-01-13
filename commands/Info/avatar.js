@@ -37,9 +37,9 @@ exports.run = run;
 exports.data = {
     name: "avatar",
     description: "Displays another user's or your avatar",
-    aliases: ["av", "pfp"],
+    aliases: "av",
     category: "Info",
     requires: "none",
-    usage: ["avatar [user]"],
-    examples: ["avatar", "avatar @GangstaCat", "avatar discord"],
+    usage: "avatar [user]",
+    examples: "avatar @GangstaCat"
 };

@@ -5,9 +5,9 @@ module.exports.run = async (bot, message, args) => {
 module.exports.data = {
     name: "unmute",
     description: "unmutes a user, allowing them to talk again",
-    aliases: ["um"],
+    aliases: "um",
     category: "Moderation",
     requires: "permission: Mute Members",
-    usage: ["unmute <mention>"],
-    examples: ["unmute @GangstaCat"]
+    usage: "unmute <mention>",
+    examples: "unmute @GangstaCat"
 }

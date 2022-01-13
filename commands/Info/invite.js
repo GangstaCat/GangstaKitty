@@ -6,7 +6,7 @@ module.exports.data = {
     name: "invite",
     description: "Invite the bot to your server",
     category: "Info",
-    aliases: ["i", "inv"],
+    aliases: "i",
     requires: "none",
     usage: "invite",
     examples: "invite"

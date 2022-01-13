@@ -28,9 +28,9 @@ module.exports.run = async (bot, message, args) => {
 module.exports.data = {
   name: "ban",
   description: "Bans a user from the server",
-  aliases: ["b"],
+  aliases: "b",
   category: "Moderation",
   requires: "Permission: Ban Members",
-  usage: ["ban <mention | user id> [reason]"],
-  examples: ["ban @GangstaCat", "ban 610915422723637268 abusing mod powers"]
+  usage: "ban <mention | user id> [reason]",
+  examples: "ban @GangstaCat This is an example"
 }

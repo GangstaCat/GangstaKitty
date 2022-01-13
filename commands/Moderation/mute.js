@@ -7,9 +7,9 @@ module.exports.run = async (bot, message, args) => {
 module.exports.data = {
   name: "mute",
   description: "Disallows a user to talk in text and voice channels",
-  aliases: ["m"],
+  aliases: "m",
   category: "Moderation",
   requires: "permission: Mute Members",
-  usage: ["mute <mention | user id> [time] [reason]"],
-  examples: ["mute @GangstaCat", "mute 610915422723637268 5m"]
+  usage: "mute <mention | user id> [time] [reason]",
+  examples: "mute @GangstaCat"
 }

@@ -30,7 +30,7 @@ module.exports.data = {
   name: "tabbycat",
   description: "A random cat from the Tabby Cat Chrome extension",
   category: "Fun",
-  aliases: ["tc"],
+  aliases: "tc",
   requires: "none",
   usage: "tabbycat",
   examples: "tabbycat"

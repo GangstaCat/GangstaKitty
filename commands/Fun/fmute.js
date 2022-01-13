@@ -31,9 +31,9 @@ module.exports.run = async (bot, message, args) => {
 module.exports.data = {
     name: "fmute",
     description: "mute someone",
-    aliases: ["fm", "fakemute"],
+    aliases: "fm",
     category: "Fun",
     requires: "none",
-    usage: ["fmute <mention> [time]"],
-    examples: ["fmute @GangstaCat", "fmute @GangstaCat 1m"]
+    usage: "fmute <mention> [time]",
+    examples: "fmute @GangstaCat 1m"
 }

@@ -28,9 +28,9 @@ module.exports.run = async (bot, message, args) => {
 module.exports.data = {
   name: "kick",
   description: "Kicks a user from the server",
-  aliases: ["k"],
+  aliases: "k",
   category: "Moderation",
   requires: "permission: Kick Members",
-  usage: ["kick <mention | user id> [reason]"],
-  examples: ["kick @GangstaCat", "kick 610915422723637268 Posting NSFW in general chat"]
+  usage: "kick <mention | user id> [reason]",
+  examples: "kick @GangstaCat this is an example"
 }

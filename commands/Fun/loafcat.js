@@ -25,8 +25,8 @@ module.exports.data = {
   name: "loafcat",
   description: "All the loaf cats Gangsta has ever got his hands on",
   category: "Fun",
-  aliases: ["loaf", "lc"],
+  aliases: "loaf",
   requires: "none",
-  usage: ["loafcat <number>"],
+  usage: "loafcat <number>",
   examples: "loafcat 3"
 }

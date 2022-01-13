@@ -4,9 +4,9 @@ module.exports.run = async (bot, message, args) => {
 module.exports.data = {
     name: "weeklycatfact",
     description: "Weekly cat fact; Weekly changing cat fact!",
-    aliases: ["wcf"],
+    aliases: "wcf",
     category: "Fun",
     requires: "none",
-    usage: ["weeklycatfact"],
-    examples: ["weeklycatfact"]
+    usage: "weeklycatfact",
+    examples: "weeklycatfact"
 }

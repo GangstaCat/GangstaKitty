@@ -46,9 +46,9 @@ module.exports.run = async (bot, message, args) => {
 module.exports.data = {
   name: "warn",
   description: "warns a user. after two warns a user will be kicked",
-  aliases: ["w"],
+  aliases: "w",
   category: "Moderation",
   requires: "permission: Manage Roles",
-  usage: ["warn <mention | user id> [reason]"],
-  examples: ["warn @GangstaCat", "warn 610915422723637268 posting memes in #general"]
+  usage: "warn <mention | user id> [reason]",
+  examples: "warn @GangstaCat"
 }
