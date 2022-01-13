@@ -21,11 +21,11 @@ module.exports.run = async (bot, message, args) => {
 
 
 module.exports.data = {
-    name: "bulk delete",
+    name: "purge",
     description: "Deletes an amount of messages of your choice",
-    aliases: ["hiss", "bd"],
+    aliases: ["hiss"],
     category: "Moderation",
     requires: "permission: Manage Messages",
-    usage: ["bulkdelete <amount>"],
-    examples: ["bulkdelete 10"]
+    usage: ["purge <amount>"],
+    examples: ["purge 10"]
 }
