@@ -7,8 +7,8 @@ module.exports.run = async (bot, message, args) => {
         if (args[0] < 1) return message.reply({ content: "Deleting a negative or neutral amount of messages is illegal, i can't do it" });
 
         await message.channel.messages.fetch({ limit: args[0] + 1 }).then(messages => {
-            message.channel.bulkDelete(messages);
             console.log(messages)
+            message.channel.bulkDelete(messages);
         });
         message.reply({ content: `Successfully deleted ${args} messages!` }).then(msg => {
             setTimeout(() => msg.delete(), 10000)
