@@ -17,12 +17,6 @@ module.exports.run = async (bot, message, args) => {
   else {
     let command = bot.commands.get(args[0]) || bot.commands.find(cmd => cmd.data.aliases.includes(args[0]));
     if (!command) return message.reply({ content: "that is not a command" });
-    console.log(command.data.aliases)
-    console.log(command.data.name)
-    console.log(command.data.description)
-    console.log(command.data.requires)
-    console.log(command.data.usage)
-    console.log(command.data.examples)
 
     let commandEmbed = new MessageEmbed()
       .setColor("#007DFF")
