@@ -6,8 +6,8 @@ module.exports.run = async (bot, message, args) => {
         if (args[0] > 100) return message.reply({ content: "I can't purge more than 100 messages" });
         if (args[0] < 1) return message.reply({ content: "Deleting a negative or neutral amount of messages is illegal, i can't do it" });
 
+        console.log(args[0] + 1);
         await message.channel.messages.fetch({ limit: args[0] + 1 }).then(messages => {
-            console.log(messages)
             message.channel.bulkDelete(messages);
         });
         message.reply({ content: `Successfully deleted ${args} messages!` }).then(msg => {
