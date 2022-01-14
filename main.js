@@ -13,8 +13,6 @@ const prefix = '+';
 const { MessageActionRow, MessageButton } = require('discord.js');
 
 const fs = require('fs');
-const mongoose = require('mongoose');
-require('dotenv').config()
 
 
 bot.commands = new Collection();
@@ -34,10 +32,6 @@ for (let folder of fs.readdirSync("./commands/")) {
 
 //online log and presence
 bot.on("ready", async () => {
-  await mongoose.connect(process.env.MONGO_URI, {
-    keepAlive: true,
-
-  })
   console.log('GangstaKitty is online!');
   bot.user.setActivity(`+help. Fixing spree yay`, { type: 'PLAYING' })
 });
