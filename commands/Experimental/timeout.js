@@ -4,8 +4,8 @@ module.exports.run = async (bot, message, args) => {
 
     if (target) {
       const memberTarget = message.guild.members.cache.get(target.id);
-      const timeoutTime = args[0];
-      const timeoutReason = args.slice(1).join(" ");
+      const timeoutTime = args[1];
+      const timeoutReason = args.slice(2).join(" ");
 
       memberTarget.timeout(timeoutTime, timeoutReason)
       message.channel.send({ content: `${message.author} timed out <@${memberTarget.id}> (\`${memberTarget.id}\`) for ${timeoutTime} milliseconds. Reason: ${timeoutReason}` });
