@@ -24,7 +24,7 @@ module.exports.run = async (bot, message, args) => {
 module.exports.data = {
   name: "createchannel",
   description: "Create a channel with whatever name and description you want",
-  aliases: ["cc"],
+  aliases: "cc",
   category: "Experimental",
   requires: "Permission: Manage channels",
   usage: "createchannel <channel name> [channel description]",
