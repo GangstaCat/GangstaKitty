@@ -70,11 +70,15 @@ bot.on("messageCreate", async message => {
 
   //triggers
   , bot.on("messageCreate", m => {
-    if (m.author.bot) return; if (m.content == "Gangsta") { m.channel.send({ content: "https://cdn.discordapp.com/attachments/856832353409302538/889431236693614642/GangstaCat.png" }) }
+    if (m.author.bot) return; if (m.content === "Gangsta") { m.channel.send({ content: "https://cdn.discordapp.com/attachments/856832353409302538/889431236693614642/GangstaCat.png" }) }
   })
   , bot.on("messageCreate", m => {
-    if (m.author.bot) return; if (m.content == "stfu") { m.channel.send({ content: "https://cdn.discordapp.com/attachments/553322925395017732/739837616014491698/video0.mp4" }) }
+    if (m.author.bot) return; if (m.content === "stfu") { m.channel.send({ content: "https://cdn.discordapp.com/attachments/553322925395017732/739837616014491698/video0.mp4" }) }
   })
+  , bot.on("messageCreate", m => {
+    if (m.author.bot) return; if (m.author.id === "159985870458322944") { m.channel.send({ content: "Shut the fuck up meeshit no one asked" }) }
+  })
+
   ,
   //buttons
 
