@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
         await message.channel.messages.fetch({ limit: args[0] }).then(messages => {
             message.channel.bulkDelete(messages);
         });
-        message.reply({ content: `Successfully deleted ${args} messages!` }).then(msg => {
+        message.channel.send({ content: `Successfully deleted ${args} messages!` }).then(msg => {
             setTimeout(() => msg.delete(), 10000)
         })
     }
