@@ -5,7 +5,7 @@ module.exports.run = async (bot, message, args) => {
     if (target) {
       const memberTarget = message.guild.members.cache.get(target.id);
       const timeoutTime = args[1];
-      console.log(timeoutTime);
+      console.log(typeof timeoutTime);
       const timeoutReason = args.slice(2).join(" ");
 
       memberTarget.timeout(timeoutTime, timeoutReason)
