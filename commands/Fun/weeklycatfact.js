@@ -1,5 +1,5 @@
 module.exports.run = async (bot, message, args) => {
-    message.channel.send({ content: "In Japan, cats are thought to have the power to turn into super spirits when they die. This may be because according to the Buddhist religion, the body of the cat is the temporary resting place of very spiritual people." })
+    message.channel.send({ content: "A cat lover is called an Ailurophilia (Greek: cat+lover)." })
 }
 module.exports.data = {
     name: "weeklycatfact",
