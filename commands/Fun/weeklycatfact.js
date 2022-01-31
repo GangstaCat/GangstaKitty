@@ -1,5 +1,5 @@
 module.exports.run = async (bot, message, args) => {
-    message.channel.send({ content: "A cat lover is called an Ailurophilia (Greek: cat+lover)." })
+    message.channel.send({ content: "The Hungarian word for \"quotation marks\" is \"macskaköröm,\" which literally translates to \"cat claws.\"" })
 }
 module.exports.data = {
     name: "weeklycatfact",
