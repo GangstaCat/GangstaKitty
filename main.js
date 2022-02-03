@@ -32,7 +32,7 @@ for (let folder of fs.readdirSync("./commands/")) {
 //online log and presence
 bot.on("ready", async () => {
   console.log('GangstaKitty is online!');
-  bot.user.setActivity(`+help. Fix this mess of code on github (https://github.com/GangstaCat/GangstaKitty)`, { type: 'PLAYING' })
+  bot.user.setActivity(`+help || currently eating code`, { type: 'LISTENING' })
 });
 
 //command handler
@@ -98,4 +98,4 @@ bot.on("messageCreate", async message => {
 
   //the bot login. crucial for getting the bot online
   // bot.login(process.env.token))
-  bot.login(process.env.token))
+  bot.login(process.env.TOKEN))
