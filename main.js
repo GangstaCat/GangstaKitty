@@ -98,4 +98,4 @@ bot.on("messageCreate", async message => {
 
   //the bot login. crucial for getting the bot online
   // bot.login(process.env.token))
-  bot.login(process.env.TOKEN))
+  bot.login(process.env.token))
