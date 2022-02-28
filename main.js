@@ -40,7 +40,9 @@ bot.on("guildMemberAdd", guildMember => {
       .setTitle(`Welcome ${guildMember.user.tag}!`)
       .setDescription("Welcome to this awesome server")
       .setThumbnail(guildMember.user.displayAvatarURL({ dynamic: true }))
+    const memberRole = guildMember.guild.roles.cache.get("914152245799579648")
     guildMember.guild.channels.cache.get("914151816386727948").send({ embeds: [embed] })
+    guildMember.roles.add(memberRole)
   }
 });
 
