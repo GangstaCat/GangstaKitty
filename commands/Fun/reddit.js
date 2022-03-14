@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args) => {
         const embed = new MessageEmbed()
           .setTitle(response.data.title)
           .setImage(response.data.url)
-          .setFooter(`${message.author.tag} | sent in r/${response.data.subreddit} by u/${response.data.author}`, message.author.displayAvatarURL({ dynamic: true }));
+          .setFooter(`${message.author.tag} | sent in r/${response.data.subreddit} by u/${response.data.author} | ${response.data.ups} upvotes`, message.author.displayAvatarURL({ dynamic: true }));
         message.channel.send({ embeds: [embed] });
       }
     });
