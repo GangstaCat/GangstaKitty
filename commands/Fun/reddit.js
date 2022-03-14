@@ -18,11 +18,11 @@ module.exports.run = async (bot, message, args) => {
 }
 
 module.exports.data = {
-  name: "bread",
-  description: "gets a random bread image from any subressit of your choosing!",
+  name: "reddit",
+  description: "gets a random image from any subreddit of your choosing!",
   category: "Fun",
   aliases: "reddit",
   requires: "none",
-  usage: "reddit",
-  examples: "reddit"
+  usage: "reddit {subreddit}",
+  examples: "reddit softwaregore"
 }
