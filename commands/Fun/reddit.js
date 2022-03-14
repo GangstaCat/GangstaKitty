@@ -23,6 +23,6 @@ module.exports.data = {
   category: "Fun",
   aliases: "reddit",
   requires: "none",
-  usage: "reddit {subreddit}",
+  usage: "reddit <subreddit>",
   examples: "reddit softwaregore"
 }
