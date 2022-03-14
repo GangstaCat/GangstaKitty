@@ -72,4 +72,4 @@ bot.on("messageCreate", m => {
   if (m.author.bot) return; if (m.content === "stfu") { m.channel.send({ content: "https://cdn.discordapp.com/attachments/553322925395017732/739837616014491698/video0.mp4" }) }
 });
 
-bot.login("OTM4ODA4Njc3NTc2NjE4MDA0.Yfvrtg.i_9z7LpGFNkcYVLuZDfNB-1ns_c")
+bot.login(process.env.token)
