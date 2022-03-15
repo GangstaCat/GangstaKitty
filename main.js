@@ -46,6 +46,12 @@ bot.on("guildMemberAdd", guildMember => {
   }
 });
 
+bot.on("guildMemberRemove", guildMember => {
+  if (guildMember.guild.id === "914151815749181471") {
+    guildMember.guild.channels.cache.get("914151816386727948").send({ content: `<@${guildMember.id}> has left the server :(` })
+  }
+})
+
 //command handler
 bot.on("messageCreate", async message => {
   if (!message.content.toLowerCase().startsWith(prefix.toLowerCase()) || message.author.bot) return;
