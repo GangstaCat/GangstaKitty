@@ -14,6 +14,8 @@ module.exports.run = async (bot, message, args) => {
           .setFooter(`${message.author.tag} | sent in r/${response.data.subreddit} by u/${response.data.author} | ${response.data.ups} upvotes`, message.author.displayAvatarURL({ dynamic: true }));
         message.channel.send({ embeds: [embed] });
       }
+    }).catch(err => {
+      message.channel.send({ content: `An error occured! \n\`\`\`${err}\`\`\`` })
     });
 }
 
