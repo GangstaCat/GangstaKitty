@@ -34,21 +34,25 @@ bot.on("ready", async () => {
 });
 
 bot.on("guildMemberAdd", guildMember => {
-  if (guildMember.guild.id === "914151815749181471") {
+  if (guildMember.guild.id === "914151815749181471") { // 914151815749181471
     const embed = new MessageEmbed()
       .setColor("007DFF")
       .setTitle(`Welcome ${guildMember.user.tag}!`)
       .setDescription("Welcome to this awesome server")
       .setThumbnail(guildMember.user.displayAvatarURL({ dynamic: true }))
     const memberRole = guildMember.guild.roles.cache.get("914152245799579648")
-    guildMember.guild.channels.cache.get("914151816386727948").send({ embeds: [embed] })
+    guildMember.guild.channels.cache.get("914151816386727948").send({ embeds: [embed] }) // 914151816386727948
     guildMember.roles.add(memberRole)
+    const memberVC = guildMember.guild.channels.cache.get("953561276322295820");
+    memberVC.setName(`Member Count: ${guildMember.guild.memberCount}`);
   }
 });
 
 bot.on("guildMemberRemove", guildMember => {
   if (guildMember.guild.id === "914151815749181471") {
-    guildMember.guild.channels.cache.get("914151816386727948").send({ content: `<@${guildMember.id}> has left the server :(` })
+    guildMember.guild.channels.cache.get("914151816386727948").send({ content: `${guildMember.user.tag} has left the server :(` })
+    const memberVC = guildMember.guild.channels.cache.get("953561276322295820");
+    memberVC.setName(`Member Count: ${guildMember.guild.memberCount}`);
   }
 })
 
@@ -63,7 +67,7 @@ bot.on("messageCreate", async message => {
     try {
       await command.run(bot, message, args);
     } catch (e) {
-      message.channel.send({ content: "an error occured while executing that command" })
+      message.channel.send({ content: `an error occured while executing that command \n\`\`\`${e}\`\`\`` })
       console.error(`${message.guild.name} - #${message.channel.name} - ${message.channel.id}-${message.id}\n"${message.content}"\n`, e.stack);
     }
   }
