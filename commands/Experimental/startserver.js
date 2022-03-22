@@ -4,6 +4,7 @@ module.exports.run = async (bot, message, args) => {
   message.channel.send({ content: "Server starting, please wait." })
   const server = args[0];
   if (!args) server = "GangstaCatTest.aternos.me";
+  console.log(process.cwd())
   process.chdir("aternosAPI");
   exec(`npm run start -- --${server}`, (error, stdout, stderr) => {
     if (error || stderr) {
