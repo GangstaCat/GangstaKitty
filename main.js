@@ -8,6 +8,8 @@ const bot = new Client({
   ]
 });
 
+const token = "OTM4ODA4Njc3NTc2NjE4MDA0.Yfvrtg.x3BIk1KKlg8cgoX9K2br1oC6QnI";
+
 const prefix = '+';
 
 const fs = require('fs');
@@ -73,7 +75,6 @@ bot.on("messageCreate", async message => {
   }
 });
 
-
 //triggers
 bot.on("messageCreate", m => {
   if (m.author.bot) return; if (m.content === "Gangsta") { m.channel.send({ content: "https://cdn.discordapp.com/attachments/856832353409302538/889431236693614642/GangstaCat.png" }) }
@@ -82,4 +83,4 @@ bot.on("messageCreate", m => {
   if (m.author.bot) return; if (m.content === "stfu") { m.channel.send({ content: "https://cdn.discordapp.com/attachments/553322925395017732/739837616014491698/video0.mp4" }) }
 });
 
-bot.login(process.env.token)
+bot.login(token)
