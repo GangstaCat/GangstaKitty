@@ -8,7 +8,7 @@ const bot = new Client({
   ]
 });
 
-const token = "OTM4ODA4Njc3NTc2NjE4MDA0.Yfvrtg.x3BIk1KKlg8cgoX9K2br1oC6QnI";
+const token = process.env.token;
 
 const prefix = '+';
 
