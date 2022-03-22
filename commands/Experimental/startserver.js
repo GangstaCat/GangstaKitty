@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args) => {
 
   const fs = require('fs');
 
-  fs.readdir("./", { withFileTypes: true }, (error, files) => {
+  fs.readdir("./aternosAPI", { withFileTypes: true }, (error, files) => {
     const directoriesInDIrectory = files
       .filter((item) => item.isDirectory())
       .map((item) => item.name);
