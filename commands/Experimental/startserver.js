@@ -4,7 +4,17 @@ module.exports.run = async (bot, message, args) => {
   message.channel.send({ content: "Server starting, please wait." })
   const server = args[0];
   if (!args) server = "GangstaCatTest.aternos.me";
-  console.log(process.cwd())
+
+  const fs = require('fs');
+
+  fs.readdir(pathToDirectory, { withFileTypes: true }, (error, files) => {
+    const directoriesInDIrectory = files
+      .filter((item) => item.isDirectory())
+      .map((item) => item.name);
+
+    console.log(directoriesInDIrectory);
+  });
+
   process.chdir("aternosAPI");
   exec(`npm run start -- --${server}`, (error, stdout, stderr) => {
     if (error || stderr) {
