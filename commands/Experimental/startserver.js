@@ -3,7 +3,7 @@ const exec = require('child_process').exec;
 module.exports.run = async (bot, message, args) => {
   message.channel.send({ content: "Server starting, please wait." })
   const server = args[0];
-  if (!args) server = "GangstaCatTest.aternos.me";
+  if (!args.length) server = "GangstaCatTest.aternos.me";
 
   const fs = require('fs');
 
