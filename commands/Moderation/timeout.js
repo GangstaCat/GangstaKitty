@@ -1,3 +1,4 @@
+const ms = require('ms');
 module.exports.run = async (bot, message, args) => {
   if (message.member.permissions.has("TIMEOUT_MEMBERS")) {
     const target = message.mentions.users.first() || message.guild.members.cache.get(args[0]);
@@ -8,10 +9,10 @@ module.exports.run = async (bot, message, args) => {
         timeoutReason = "Unspecified";
       }
       const memberTarget = message.guild.members.cache.get(target.id);
-      const timeoutTime = Number(args[1]);
+      const timeoutTime = args[1];
 
-      memberTarget.timeout(timeoutTime, timeoutReason)
-      message.channel.send({ content: `${message.author} timed out <@${memberTarget.id}> (\`${memberTarget.id}\`) for ${timeoutTime} milliseconds. Reason: ${timeoutReason}` });
+      memberTarget.timeout(ms(timeoutTime), timeoutReason)
+      message.channel.send({ content: `${message.author} timed out <@${memberTarget.id}> (\`${memberTarget.id}\`) for ${ms(ms(timeoutTime))} milliseconds. Reason: ${timeoutReason}` });
     } else {
       message.channel.send({ content: "Please mention a member to time them out." });
     }
