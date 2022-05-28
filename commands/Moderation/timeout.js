@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) => {
       const timeoutTime = args[1];
 
       memberTarget.timeout(ms(timeoutTime), timeoutReason)
-      message.channel.send({ content: `${message.author} timed out <@${memberTarget.id}> (\`${memberTarget.id}\`) for ${ms(ms(timeoutTime))} milliseconds. Reason: ${timeoutReason}` });
+      message.channel.send({ content: `${message.author} timed out <@${memberTarget.id}> (\`${memberTarget.id}\`) for ${ms(ms(timeoutTime))}. Reason: ${timeoutReason}` });
     } else {
       message.channel.send({ content: "Please mention a member to time them out." });
     }
@@ -27,6 +27,6 @@ module.exports.data = {
   aliases: "to",
   category: "Moderation",
   requires: "Permission: Timeout members",
-  usage: "timeout <mention | id> <time (milliseconds)>",
-  examples: "timeout @GangstaCat 60000"
+  usage: "timeout <mention | id> <time>",
+  examples: "timeout @GangstaCat 60s"
 }
