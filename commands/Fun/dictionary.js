@@ -2,6 +2,8 @@ const axios = require('axios');
 const { MessageEmbed } = require("discord.js")
 
 module.exports.run = async (bot, message, args) => {
+  if (!args.length) return message.channel.send({ content: "Please provide a word!" });
+
   const options = {
     method: 'GET',
     url: 'https://mashape-community-urban-dictionary.p.rapidapi.com/define',
@@ -14,10 +16,11 @@ module.exports.run = async (bot, message, args) => {
 
   axios.request(options).then(response => {
     const definitionRaw = response.data.list[0].definition;
+    const author = response.data.list[0].author;
     const word = response.data.list[0].word;
     const exampleRaw = response.data.list[0].example;
-    const author = response.data.list[0].author;
     const URL = response.data.list[0].permalink;
+
 
     const regex = /(\[|\])/g;
     const definition = definitionRaw.replace(regex, "")
@@ -31,6 +34,8 @@ module.exports.run = async (bot, message, args) => {
       .addField("Example", `${example}`)
       .setFooter(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
     message.channel.send({ embeds: [embed] })
+  }).catch(err => {
+    message.channel.send({ content: `An error occured!\n\`\`\`${err}\`\`\`` })
   })
 }
 
