@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args) => {
     params: { term: args.splice(0).join(" ") },
     headers: {
       'X-RapidAPI-Host': 'mashape-community-urban-dictionary.p.rapidapi.com',
-      'X-RapidAPI-Key': '42c144747fmsh565d75972dd54d3p17e547jsnbdbe86ad4e6e'
+      'X-RapidAPI-Key': process.env.rapidapikey
     }
   };
 
