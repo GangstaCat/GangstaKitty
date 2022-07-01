@@ -32,7 +32,7 @@ for (let folder of fs.readdirSync("./commands/")) {
 //online log and presence
 bot.on("ready", async () => {
   console.log('GangstaKitty is online!');
-  bot.user.setActivity(`Gay month (massive w) || +help`, { type: 'PLAYING' })
+  bot.user.setActivity(`Hardcoded supremacy || +help`, { type: 'PLAYING' })
 });
 
 bot.on("guildMemberAdd", guildMember => {
@@ -52,7 +52,7 @@ bot.on("guildMemberAdd", guildMember => {
 
 bot.on("guildMemberRemove", guildMember => {
   if (guildMember.guild.id === "914151815749181471") {
-    guildMember.guild.channels.cache.get("914152245799579648").send({ content: `${guildMember.user.tag} has left the server :(` })
+    guildMember.guild.channels.cache.get("914151816386727948").send({ content: `${guildMember.user.tag} has left the server :(` })
     const memberVC = guildMember.guild.channels.cache.get("953561276322295820");
     memberVC.setName(`Member Count: ${guildMember.guild.memberCount}`);
   }
