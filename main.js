@@ -32,7 +32,7 @@ for (let folder of fs.readdirSync("./commands/")) {
 //online log and presence
 bot.on("ready", async () => {
   console.log('GangstaKitty is online!');
-  bot.user.setActivity(`Hardcoded supremacy || +help`, { type: 'PLAYING' })
+  bot.user.setActivity(`Rest in peace, Technoblade || +help`, { type: 'PLAYING' })
 });
 
 bot.on("guildMemberAdd", guildMember => {
