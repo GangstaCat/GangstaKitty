@@ -60,11 +60,7 @@ bot.on("guildMemberRemove", guildMember => {
 
 //command handler
 bot.on("messageCreate", async message => {
-  if (message.content.toLowerCase().includes("hoofddorp")) {
-    message.channel.send({ content: "Doxxing is illagal you dense brainl" })
-    message.delete()
-    message.member.ban({ reason: "Doxxing Gangsta" })
-  }
+
 
 
   if (!message.content.toLowerCase().startsWith(prefix.toLowerCase()) || message.author.bot) return;
