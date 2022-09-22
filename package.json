@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "@discordjs/rest": "^1.1.0",
     "asynckit": "^0.4.0",
     "axios": "^0.27.2",
     "combined-stream": "^1.0.8",
