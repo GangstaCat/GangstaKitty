@@ -1,3 +1,2 @@
 .env
-delete-commands.js
-deploy-command.js
+/registrations
