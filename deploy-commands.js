@@ -5,8 +5,9 @@ const { REST } = require('@discordjs/rest');
 const dotenv = require("dotenv")
 dotenv.config();
 const clientId = "847743012851286027";
+const testClient = "938808677576618004";
 const guildId = "941393934725300274";
-const token = process.env.token;
+const token = process.env.test_token;
 
 const commands = [];
 const commandsPath = path.join(__dirname, 'commands');
@@ -24,8 +25,12 @@ const rest = new REST({ version: '10' }).setToken(token);
   try {
     console.log(`Started refreshing ${commands.length} application (/) commands.`);
 
+    // const data = await rest.put(
+    //   Routes.applicationCommands(testClient),
+    //   { body: commands },
+    // );
     const data = await rest.put(
-      Routes.applicationCommands(clientId),
+      Routes.applicationGuildCommands(testClient, guildId),
       { body: commands },
     );
 

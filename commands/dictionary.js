@@ -18,27 +18,40 @@ module.exports = {
       }
     };
 
+    const randomNumber = (min, max) => {
+      return Math.floor(Math.random() * (max - min) + min)
+    };
+
+    async function getPost(response) {
+      try {
+        const post = response.data.list[randomNumber(0, 10)]
+        const definitionRaw = post.definition;
+        const author = post.author;
+        const word = post.word;
+        const exampleRaw = post.example;
+        const URL = post.permalink;
+
+        const regex = /(\[|\])/g;
+        const definition = definitionRaw.replace(regex, "")
+        const example = exampleRaw.replace(regex, "")
+        const embed = new EmbedBuilder()
+          .setColor([0, 125, 255])
+          .setAuthor({ name: author })
+          .setTitle(`${word}`)
+          .setURL(URL)
+          .setDescription(`${definition}`)
+          .addFields({ name: "Example", value: example })
+        await interaction.reply({
+          embeds: [embed]
+        })
+      } catch (err) {
+        getPost(response)
+      }
+    }
+
 
     axios.request(options).then(async response => {
-      const definitionRaw = response.data.list[0].definition;
-      const author = response.data.list[0].author;
-      const word = response.data.list[0].word;
-      const exampleRaw = response.data.list[0].example;
-      const URL = response.data.list[0].permalink;
-
-      const regex = /(\[|\])/g;
-      const definition = definitionRaw.replace(regex, "")
-      const example = exampleRaw.replace(regex, "")
-      const embed = new EmbedBuilder()
-        .setColor([0, 125, 255])
-        .setAuthor({ name: author })
-        .setTitle(`${word}`)
-        .setURL(URL)
-        .setDescription(`${definition}`)
-        .addFields({ name: "Example", value: example })
-      await interaction.reply({
-        embeds: [embed]
-      })
+      getPost(response)
     })
 
   }
